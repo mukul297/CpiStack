@@ -1,0 +1,5 @@
+Command used to extract the performance counter values :
+
+perf stat -I interval_size -e branch misses:u,L1-dcache-load-misses:u,L1-icache-load-misses:u,dTLB-load-misses:u,dTLB-store-misses:u,iTLB-load-misses:u,branch-load-misses:u,L2-misses:u,cycles:u,instructions:u -o abc.txt bash ./run.sh
+
+We have used the above command to store performance counters value of a 8 miss events in a "abc" text file. We chose different interval size for different benchmarks. Then, we clean our data from text file to csv file using the data_cleaning.py script. Using the csv file, we have modelled our linear model.
